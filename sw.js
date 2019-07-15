@@ -1,11 +1,11 @@
 /*https://developers.google.com/web/fundamentals/codelabs/offline*/
 
-var cacheName = "restaurant_cache_1";
+const cacheName = "restaurant_cache_1";
 // console.log('Service Worker: Registered');
 
 /*Array of file path strings in which app uses*/
 
-var cacheFiles = [
+const cacheFiles = [
   '/',
   '/index.html',
   '/restaurant.html',
@@ -15,6 +15,20 @@ var cacheFiles = [
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
+
+  '/restaurant.html?id=1',
+  '/restaurant.html?id=2',
+  '/restaurant.html?id=3',
+  '/restaurant.html?id=4',
+  '/restaurant.html?id=5',
+  '/restaurant.html?id=6',
+  '/restaurant.html?id=7',
+  '/restaurant.html?id=8',
+  '/restaurant.html?id=9',
+  '/restaurant.html?id=10',
+  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
+  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
+
   '/img/1.jpg',
   '/img/2.jpg',
   '/img/3.jpg',
@@ -41,7 +55,6 @@ self.addEventListener('install', function(event) {
     })
   )
 })
-
 
 /*Activate the service worker and added listener for it*/
 self.addEventListener('activate', function(event) {
@@ -75,8 +88,15 @@ self.addEventListener('fetch', function(event){
       return fetch(event.request);
 
     })
-    .catch(function(error) {
-      console.log("Error fetching and caching the new data", error);
+    .catch(function() {
+      console.log("You seem to be offline, I couldn't find any old cache for the requested URL");
     })
   )
+})
+
+self.addEventListener('message', function(event) {
+  if(event.data) {
+    console.log('Message received:' + event.data);
+    self.skipWaiting();
+  }
 })
