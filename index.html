@@ -9,6 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="firefox">
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
   <title>Restaurant Reviews</title>
 </head>
@@ -17,25 +18,28 @@
 <!--First Header of webiste -->
   <header>
     <nav>
-      <h1>
-	  <a id="page-title" aria-label="Restaurant Reviews Title" tabindex="1" href="/">Restaurant Reviews</a></h1>
+      <h1 class="title" tabindex=0>
+        <a href="/">Restaurant Reviews</a>
+      </h1>
+      <!--Give user the ability to skip to the main content -->
+      <a href="#filter" class="skipLink">Go to main content by clicking"</a>
     </nav>
   </header>
 
   <main id="maincontent">
-
-    <section id="map-container" aria-label="map of restaurants" tabindex="2" role="application">
-      <div id="map"></div>
+    <!-- added aria-label and role-->
+    <section id="map-container" aria-label="map">
+      <div id="map" role="application"></div>
     </section>
 
     <section>
-
       <div class="filter-options">
-        <h2 id="filter">Filter Results</h2>
-        <select id="neighborhoods-select" tabindex="3" aria-label="select restaurant neighborhood" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="filter">
+        <h2 id="filter" tabindex=0>Filter Results:</h2>
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select  id="cuisines-select" tabindex="3" aria-label="<select cuisine preferences"  name="cuisines" onchange="updateRestaurants()" aria-labelledby="filter">
+
+        <select  id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
 
@@ -48,6 +52,7 @@
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
 
+<!-- Regestring the service worker script applied below, which calls the sw.js -->
   <script type="application/javascript">
     if (navigator.serviceWorker) {
         window.addEventListener('load', function() {
@@ -68,7 +73,9 @@
   <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script> -->
   <footer id="footer">
 
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    Copyright (c) 2017 <a href="/">
+      <strong>Restaurant Reviews</strong>
+    </a> All Rights Reserved.
   </footer>
 </body>
 </html>

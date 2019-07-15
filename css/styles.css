@@ -94,7 +94,7 @@ nav h1 a {
 	background-color: #eee;
 	font-size: 17px;
 	margin: 0;
-	width: calc(100% - 80px);
+	width: calc(50% - 80px);
 }
 
 /* Display list items side by side */
@@ -133,6 +133,17 @@ nav h1 a {
 	background-color: #ccc;
 }
 
+/* ==========================Skip Link ================================ */
+.skipLink{
+  color:#363942;
+}
+.skipLink:hover{
+  color: orange;
+}
+.skipLink:focus{
+  color: orange;
+}
+
 /* ====================== Restaurant Filtering ====================== */
 
 .filter-options {
@@ -148,7 +159,7 @@ nav h1 a {
 .filter-options h2 {
 	color: white;
 	font-size: 1rem;
-	font-weight: normal;
+	font-weight: bold;
 	line-height: 1;
 	margin: 0 20px;
 
@@ -161,9 +172,9 @@ nav h1 a {
 	font-size: auto;
 	height: 35px;
 	letter-spacing: 0;
-  margin: 10px;
+	margin: 10px;
 	width: 200px;
-  max-width: 100%;
+
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -292,8 +303,8 @@ nav h1 a {
 #reviews-container {
 	padding: 30px 50px 80px;
 	display: flex;
-  flex-direction: column;
-  justify-content: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 #reviews-container h2 {
@@ -347,24 +358,25 @@ nav h1 a {
 
 @media only screen and (min-width: 0px) {
 
-  nav h1 a {
-    margin: auto;
-    padding: 0 10px;
-  }
+	nav h1 a {
+		margin: auto;
+		padding: 0 10px;
+	}
 
-  #resturant-list li {
+	#resturant-list li {
 		max-width: 100%;
-  }
+	}
 
-  #resturant-name {
+	#resturant-name {
 		font-size: 1.0em;
 		font-weight: bold;
-  }
+	}
 
-  #resturant-cuisine {
+	#resturant-cuisine {
 		font-size: 1.0em;
-    font-weight: 250;
-  }
+		font-weight: 250;
+	}
+
 }
 
 /*Tablet mode*/
@@ -373,22 +385,23 @@ nav h1 a {
 	nav h1 a {
 		font-weight: 650;
 		letter-spacing: 0.5em;
-  }
+	}
 
-  #resturant-list li {
+	#resturant-list li {
 		max-width: 65%;
-  }
+	}
 
-  #resturant-name {
+	#resturant-name {
 		font-size: 1.5em;
 		font-weight: 200;
-  }
+	}
 
-  #resturant-cuisine {
+	#resturant-cuisine {
 		font-size: 1.0em;
-    font-weight: 250;
+		font-weight: 250;
 		letter-spacing: 0.5em;
-  }
+	}
+
 }
 
 /**Desktop Mode**/
@@ -398,19 +411,20 @@ nav h1 a {
 		font-size: 1.3em;
 		font-weight: 650;
 		letter-spacing: 0.5em;
-  }
+	}
 
-  #resturant-list li {
+	#resturant-list li {
 		max-width: 100%;
-  }
+	}
 
-  #resturant-name {
+	#resturant-name {
 		font-size: 1.3em;
 		font-weight: 650;
-  }
+	}
 
-  #resturant-cuisine {
+	#resturant-cuisine {
 		font-size: 1.0em;
-    font-weight: 250;
-  }
+		font-weight: 250;
+	}
+
 }
