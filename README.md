@@ -2,7 +2,7 @@
 
 ## Project Overview:
 
-This project, I incrementally converted a static webpage to a mobile-ready web application. In **Stage One**, I have taken a static design that lacks accessibility and converted the design to be responsive on different sized displays and accessible for screen reader use. I have added a service worker which will cache pages as they are accessed.
+This project, I have incrementally converted a static webpage to a mobile-ready web application. In **Stage One**, I have taken a static design that lacked accessibility and converted the design to be responsive on different sized displays and accessible for screen reader use. I have added a service worker which will cache pages as they are accessed.
 
 ### Specification
 
