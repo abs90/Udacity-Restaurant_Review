@@ -21,6 +21,7 @@
     </nav>
   </header>
 
+
   <main id="maincontent">
 
     <section id="map-container" aria-label="map of restaurants" tabindex="2" role="application">
@@ -47,20 +48,20 @@
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
 
-  <script type="text/javascript">
+  <script>
     if (navigator.serviceWorker) {
-      console.log("test1");
+      // console.log("test1");
         window.addEventListener('load', function() {
-          console.log("test2");
+          // console.log("test2");
           navigator.serviceWorker.register('sw.js')
           .then(function(registration) {
-            console.log("test3"); //fails to print this
+            // console.log("test3"); //used for debugging
             // Registration was successful
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
           })
-          .catch(function(err) {
+          .catch(function(error) {
             // registration failed :(
-            console.log('ServiceWorker registration failed: ', err);
+            console.log('ServiceWorker registration failed: ', error);
           });
         });
     }

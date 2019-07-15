@@ -2,8 +2,8 @@ const cacheName = 'cache_v1';
 // console.log('Service Worker: Registered');
 /*Array of file path strings in which app uses*/
 const cacheFiles = [
-  './'
-  './index.html'
+  './',
+  './index.html',
   './restaurant.html',
   './css/styles.css',
   './js/dbhelper.js',
@@ -19,12 +19,12 @@ const cacheFiles = [
   './img/7.jpg',
   './img/8.jpg',
   './img/9.jpg',
-  './img/10.jpg',
-]);
+  './img/10.jpg'
+];
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('cache_v1').then(function(cache) {
+    caches.open(cacheName).then(function(cache) {
       return cache.addAll(cacheFiles);
     })
   );
